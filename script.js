@@ -8,16 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetZoomBtn = document.getElementById('resetZoom');
     const hoverLabel = document.querySelector('.hover-label');
 
-    let scale = 1;
+    let scale = 4;
     const MIN_SCALE = 0.5;
-    const MAX_SCALE = 4;
+    const MAX_SCALE = 6;
     const ZOOM_STEP = 0.2;
 
     // Panning variables
     let isPanning = false;
     let startX, startY;
-    let translateX = 0;
-    let translateY = 0;
+    let translateX = -1300; // Initial pan to the right
+    let translateY = 500;
+
+    // Initial transform
+    updateTransform();
 
     // Update transform
     function updateTransform() {
@@ -46,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resetZoom() {
-        scale = 1;
-        translateX = 0;
+        scale = 4;  // Reset to initial zoom
+        translateX = -500;  // Reset to initial pan position
         translateY = 0;
         updateTransform();
     }

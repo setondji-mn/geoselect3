@@ -42,7 +42,7 @@ svg {
 svg path {
     fill: #E6F0DE;
     stroke: #fff;
-    stroke-width: 1;
+    stroke-width: .2;
     transition: fill 0.2s ease;
     cursor: pointer;
 }
